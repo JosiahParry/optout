@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>23andMe Security Breach</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row mt-5 justify-content-center">
+      <div class="col-md-8">
+        <div class="card text-center">
+          <div class="card-body">
+            <h3 class="card-title">23andMe Lost Your Genetic Data!</h3>
+            <div class="card-text">
+              <p>
+                <em>6.9 million</em> people's data were stolen, including yours. Your <strong>name, birth date, current location</strong>, and more might be in the wrong hands.
+              </p>
+              <img id="golem" src="assets/golem.png" class="card img-fluid w-50 mx-auto d-block mb-3 shadow"/>
+              <p>
+                Instead of safeguarding your privacy, 23andMe updated their terms to prevent <em>you</em> from joining a class action lawsuit. They've given you 30 days to opt out via email.
+              </p>
+              <p>
+                <strong>Press the button below for a pre-populated opt-out email:</strong>
+              </p>
+              <a href="mailto:legal@23andme.com,arbitrationoptout@23andme.com,customercare@23andme.com?subject=I%20Opt%20Out%20of%20New%20Terms&body=I%20hereby%20opt%20out%20of%20the%20new%20terms%20that%20prevent%20me%20from%20participating%20in%20a%20class%20action%20lawsuit.%20My%20privacy%20is%20important%20to%20me,%20and%20I%20refuse%20to%20waive%20my%20rights." class="btn btn-danger">Opt Out Now</a>
+              <hr>
+
+              <p>Or, copy the email addesses and body below.</p>
+              <div class="mx-auto col-md-10">
+              <div class="mt-2 clipboard-example align-items-center">
+                <div class="input-group mb-3">
+                  <span class="input-group-text">
+                    To:
+                  </span>
+                    <input id="in01"
+                           type="text"
+                           class="form-control"
+                           placeholder="BTC Address..."
+                           aria-label="BTC Address"
+                           aria-describedby="btn01"
+                           value="legal@23andme.com,arbitrationoptout@23andme.com,customercare@23andme.com"
+                           readonly
+                    >
+                    <button id="btn01"
+                            class="btn btn-primary"
+                            type="button"
+                            data-clipboard-demo=""
+                            data-clipboard-target="#in01"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="bottom"
+                            title="Copy to Clipboard">
+                            Copy
+                    </button>
+                </div>
+            </div>
+
+            <div class="form-floating">
+          
+              <textarea rows="4" class="form-control h-100" id="emailBody" id="floatingTextarea">I hereby opt out of the new terms that prevent me from participating in a class action lawsuit. My privacy is important to me, and I refuse to waive my rights.</textarea>
+              <label for="floatingTextarea">Subject: Opt Out: Terms of Service</label>
+            </div>
+            
+          </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script>
+    let btn = document.getElementById('btn01');
+    let clipboard = new ClipboardJS(btn);
+
+    clipboard.on('success', function(e) {
+        console.log(e);
+    });
+
+    clipboard.on('error', function(e) {
+        console.log(e);
+    });
+</script>
+</body>
+
+</html>
